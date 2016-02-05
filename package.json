@@ -1,14 +1,14 @@
 {
-  "name": "f2ePrototype",
+  "name": "react-redux-immutable",
   "version": "0.1.0",
-  "description": "f2e prototype project",
+  "description": "react-redux-immutable prototype project",
   "scripts": {
     "start": "node index.js",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/white87332/f2ePrototype.git"
+    "url": "https://github.com/white87332/react-redux-immutable.git"
   },
   "license": "MIT",
   "bugs": {
