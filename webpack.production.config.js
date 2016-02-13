@@ -17,7 +17,7 @@ module.exports = {
     {
         path: path.resolve(__dirname, 'public'),
         filename: './asset/js/bundle/bundle.min.js',
-        chunkFilename: "./asset/js/bundle/[id].bundle.min.js"
+        chunkFilename: "./asset/js/bundle/[name].bundle.min.js"
     },
     // devtool: "source-map",
     resolve:

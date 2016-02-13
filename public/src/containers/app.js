@@ -16,9 +16,9 @@ const loadContainerAsync = bundle => (location, callback) =>
 
 const routes = (
 	<Router history={hashHistory}>
-		<Route getComponent={loadContainerAsync(require('bundle?lazy!../components/layout/layout'))}>
-			<Route path="posts" getComponent={loadContainerAsync(require('bundle?lazy!../components/posts/posts'))} />
-			<Route path="counter" getComponent={loadContainerAsync(require('bundle?lazy!../components/counter/counter'))} />
+		<Route getComponent={loadContainerAsync(require('bundle?lazy&name=layout!../components/layout/layout'))}>
+			<Route path="posts" getComponent={loadContainerAsync(require('bundle?lazy&name=posts!../components/posts/posts'))} />
+			<Route path="counter" getComponent={loadContainerAsync(require('bundle?lazy&name=counter!../components/counter/counter'))} />
 		</Route>
     </Router>
 );
