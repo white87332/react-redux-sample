@@ -1,6 +1,6 @@
-# prototype
+# react-redux-immutable
 
-This is a prototype, use react, redux, react-router, webpack, babel6, immutable.js
+This is a react-redux-immutable prototype, use react, redux, react-router, webpack, babel6, immutable.js
 
 ## Installation
 
