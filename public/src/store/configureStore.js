@@ -2,10 +2,10 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from '../reducers';
 import thunk from 'redux-thunk';
 import { syncHistory } from 'react-router-redux';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
 // react-router-redux
-const reduxRouterMiddleware = syncHistory(hashHistory);
+const reduxRouterMiddleware = syncHistory(browserHistory);
 
 // createStore and add thunk and reduxRouterMiddleware to applyMiddleware
 const finalCreateStore = compose(
