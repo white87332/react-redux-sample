@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import reducer from '../reducers';
+import rootReducer from '../reducers';
 import thunk from 'redux-thunk';
 import { syncHistory } from 'react-router-redux';
 import { browserHistory } from 'react-router';
@@ -7,17 +7,17 @@ import { browserHistory } from 'react-router';
 // react-router-redux
 const reduxRouterMiddleware = syncHistory(browserHistory);
 
-// createStore and add thunk and reduxRouterMiddleware to applyMiddleware
-const finalCreateStore = compose(
-    applyMiddleware(thunk),
-    applyMiddleware(reduxRouterMiddleware),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
-)(createStore);
-
-
 export default function configureStore(initialState)
 {
-    const store = finalCreateStore(reducer, initialState);
+    const store = createStore(
+        rootReducer,
+        initialState,
+        compose(
+            applyMiddleware(thunk),
+            applyMiddleware(reduxRouterMiddleware),
+            window.devToolsExtension ? window.devToolsExtension() : f => f
+        )
+    );
 
     if (module.hot)
     {
