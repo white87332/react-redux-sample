@@ -3,11 +3,11 @@ import { bindActionCreators } from 'redux';
 import * as postsActions from '../../actions/postsActions';
 import { connect } from 'react-redux';
 
-// Immutable object
+
 function mapStateToProps(state)
 {
     return {
-        posts: state.get('posts')
+        posts: state.posts
     };
 }
 
@@ -35,7 +35,7 @@ class Posts extends Component
     {
         const { posts } = this.props;
 
-        let items = posts.get('list').map((data, key) => {
+        let items = posts.list.map((data, key) => {
             return <div key={key}>{data.title}</div>;
         });
 

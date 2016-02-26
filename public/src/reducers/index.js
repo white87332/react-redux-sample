@@ -1,14 +1,13 @@
-// import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 import counter from './counter';
 import posts from './posts';
-import { routeReducer } from 'react-router-redux';
-import { combineReducers } from 'redux-immutable';
+import { routerReducer as routing } from 'react-router-redux';
 
 const rootReducer = combineReducers(
 {
     counter,
     posts,
-    routing: routeReducer
+    routing
 });
 
 export default rootReducer;

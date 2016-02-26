@@ -3,10 +3,15 @@ import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import configureStore from '../store/configureStore.js';
-import Immutable from 'immutable';
-const store = configureStore(Immutable.Map());
+import { syncHistoryWithStore } from 'react-router-redux';
 
-//lazy load component
+// store
+const store = configureStore();
+
+// react-router-redux
+const history = syncHistoryWithStore(browserHistory, store);
+
+// lazy load component
 const loadContainerAsync = bundle => (location, callback) =>
 {
 	bundle(component => {
@@ -15,10 +20,10 @@ const loadContainerAsync = bundle => (location, callback) =>
 };
 
 const routes = (
-	<Router history={browserHistory}>
+	<Router history={history}>
 		<Route getComponent={loadContainerAsync(require('bundle?lazy&name=layout!../components/layout/layout'))}>
-			<Route path="posts" getComponent={loadContainerAsync(require('bundle?lazy&name=posts!../components/posts/posts'))} />
-			<Route path="counter" getComponent={loadContainerAsync(require('bundle?lazy&name=counter!../components/counter/counter'))} />
+			<Route  path= "/posts" getComponent={loadContainerAsync(require('bundle?lazy&name=posts!../components/posts/posts'))} />
+			<Route  path= "/counter" getComponent={loadContainerAsync(require('bundle?lazy&name=counter!../components/counter/counter'))} />
 		</Route>
     </Router>
 );
