@@ -20,11 +20,6 @@ module.exports = {
     {
         "extensions": ["", ".js", ".jsx"]
     },
-    plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
-    ],
     module:
     {
         loaders: [
@@ -50,5 +45,10 @@ module.exports = {
             test: /\.(jpe?g|png|gif|svg)$/i,
             loader: 'url-loader?limit=8192&name=./asset/img/[name].[ext]'
         }]
-    }
+    },
+    plugins: [
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ]
 };
