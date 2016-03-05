@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/white87332/react-redux/issues"
   },
   "keywords": [
     "react",
@@ -51,9 +51,7 @@
     "json-loader": "^0.5.4",
     "node-libs-browser": "^1.0.0",
     "node-sass": "^3.4.2",
-    "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.2",
-    "redbox-react": "^1.2.2",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
