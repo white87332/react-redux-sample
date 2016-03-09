@@ -20,6 +20,7 @@
   ],
   "homepage": "",
   "dependencies": {
+    "babel-core": "^6.7.0",
     "classnames": "^2.2.3",
     "immutable": "^3.7.6",
     "lodash": "^4.6.1",
