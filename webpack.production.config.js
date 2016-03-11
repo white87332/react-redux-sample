@@ -43,7 +43,7 @@ module.exports = {
             loader: "json-loader"
         },
         {
-            test: /\.scss$/,
+            test: /\.css|\.scss$/,
             loader: ExtractTextPlugin.extract(
                 "style-loader",
                 'css-loader!sass-loader?includePaths[]=' + path.resolve(__dirname, './node_modules/compass-mixins/lib')
