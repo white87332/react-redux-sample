@@ -1,11 +1,11 @@
 import objectAssign from 'object-assign';
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/counter';
 
-const initialItems = {
+const initialState = {
     'numbers': 0
 };
 
-export default function counter(state = initialItems, action = {})
+export default function counter(state = initialState, action = {})
 {
     switch (action.type)
     {
