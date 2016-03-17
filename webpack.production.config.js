@@ -7,28 +7,24 @@ module.exports = {
     {
         app: [
             './public/src/containers/app',
-        ],
-        // vendors: [
-        //     'i18Next',
-        //     'jqueryLazyload'
-        // ]
+        ]
     },
     output:
     {
         path: path.resolve(__dirname, 'public'),
-        filename: './asset/js/bundle/bundle.min.js',
-        chunkFilename: "./asset/js/bundle/chunk.[name].min.js"
+        filename: '/asset/js/bundle/bundle.min.js',
+        chunkFilename: "/asset/js/bundle/chunk.[name].min.js"
     },
     // devtool: "source-map",
-    resolve:
-    {
-        alias:
-        {
-            jqueryLazyload: './public/asset/js/jquery/jquery.lazyload.min.js',
-            i18Next: './public/asset/js/i18Next/i18Next.min.js'
-        },
-        "extensions": ["", ".js", ".jsx"]
-    },
+    // resolve:
+    // {
+    //     alias:
+    //     {
+    //         jqueryLazyload: './public/asset/js/jquery/jquery.lazyload.min.js',
+    //         i18Next: './public/asset/js/i18Next/i18Next.min.js'
+    //     },
+    //     "extensions": ["", ".js", ".jsx"]
+    // },
     module:
     {
         loaders: [
