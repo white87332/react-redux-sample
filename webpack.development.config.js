@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-
 module.exports = {
     entry:
     {
@@ -11,9 +10,9 @@ module.exports = {
     },
     output:
     {
-        path: path.join(__dirname, 'dist'),
+        path: '/asset/js/bundle/',
         filename: 'bundle.js',
-        publicPath: '/public/asset/js/bundle/',
+        publicPath: '/asset/js/bundle/',
         chunkFilename: "chunk.[name].js"
     },
     resolve:
