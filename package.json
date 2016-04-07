@@ -22,14 +22,13 @@
   "dependencies": {
     "classnames": "^2.2.3",
     "immutable": "^3.7.6",
-    "lodash": "^4.7.0",
+    "lodash": "^4.8.2",
     "object-assign": "^4.0.1",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-immutable-render-mixin": "^0.9.5",
     "react-redux": "^4.4.1",
     "react-router": "^2.0.1",
-    "react-router-redux": "^4.0.0",
+    "react-router-redux": "^4.0.1",
     "redux": "^3.3.1",
     "redux-thunk": "^2.0.1",
     "superagent": "^1.8.3"
