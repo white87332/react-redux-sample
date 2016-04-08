@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { immutableRenderDecorator } from 'react-immutable-render-mixin';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as CounterActions from '../../actions/counter.js';
@@ -16,7 +15,6 @@ function mapDispatchToProps(dispatch)
     return bindActionCreators(CounterActions, dispatch);
 }
 
-@immutableRenderDecorator
 class Counter extends Component
 {
     constructor(props, context)
