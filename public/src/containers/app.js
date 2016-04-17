@@ -23,6 +23,8 @@ const routes = (
 	<Router history={history}>
 		<Route getComponent={loadConmponentAsync(require('bundle?lazy&name=layout!../components/layout/layout'))}>
 			<Route  path= "/sortable" getComponent={loadConmponentAsync(require('bundle?lazy&name=sortable!../components/sortable/sortable'))} />
+			<Route  path= "/carousel" getComponent={loadConmponentAsync(require('bundle?lazy&name=carousel!../components/carousel/carousel'))} />
+			<Route  path= "/draggableBalls" getComponent={loadConmponentAsync(require('bundle?lazy&name=draggableBalls!../components/draggableBalls/draggableBalls'))} />
 			<Route  path= "/posts" getComponent={loadConmponentAsync(require('bundle?lazy&name=posts!../components/posts/posts'))} />
 			<Route  path= "/counter" getComponent={loadConmponentAsync(require('bundle?lazy&name=counter!../components/counter/counter'))} />
 		</Route>

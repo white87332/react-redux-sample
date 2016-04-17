@@ -1,0 +1,47 @@
+.carousel {
+    perspective: 1500rem;
+    text-align: center;
+    &__dots {
+        list-style-type: none;
+        padding: 0;
+    }
+    &__dot {
+        font-size: 3rem;
+        display: inline-block;
+        padding: 0 1rem;
+        cursor: pointer;
+        color: #CCC;
+        &--active {
+            color: #000;
+        }
+    }
+    &__dot-input {
+        display: none;
+    }
+    &__slider {
+        position: relative;
+        transform-style: preserve-3d;
+        height: 40rem;
+    }
+    &__slide {
+        $translate-amount: 40rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        opacity: 0.5;
+        backface-visibility: hidden;
+        transform: rotateY(65deg) translateZ($translate-amount);
+        transition-property: opacity, transform, visibility;
+        transition-duration: 0.25s, 0.5s, 0.5s;
+        transition-timing-function: ease-out;
+        &--shown {
+            visibility: visible;
+            opacity: 1;
+            transform: rotateY(0) translateZ(0);
+        }
+        &--leaving {
+            transform: rotateY(-90deg) translateZ(-$translate-amount);
+        }
+    }
+}
