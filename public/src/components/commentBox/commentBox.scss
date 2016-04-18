@@ -1,0 +1,66 @@
+.comment-box {
+    max-width: 30em;
+    margin: 1em auto;
+    padding: 1em;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.2);
+}
+.comment-list {
+    height: 20em;
+    margin: 0 -1em 1em;
+    padding: 1em;
+    background: #eef;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+    overflow-y: auto;
+}
+.comment-node {
+    position: relative;
+    margin-bottom: 1em;
+    padding: 1.5em;
+    background: #fff;
+    border-radius: 2.1em;
+    .print-author {
+        position: absolute;
+        top: 0.5em;
+        color: #abf;
+        font-size: 0.7em;
+    }
+}
+.name-input {
+    transition: all 0.2s;
+    &:not(:focus):valid {
+        box-shadow: none;
+        color: #abf;
+        margin-bottom: -0.5em;
+        padding: 0;
+        cursor: pointer;
+    }
+}
+input {
+    border: 0;
+}
+input[type=password],
+input[type=text] {
+    display: block;
+    width: calc(100% - 1em);
+    padding: 0.5em;
+    margin: 1em 0;
+    font-size: 1em;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset, 0 1px 4px rgba(0,0,0,0.3) inset;
+}
+input[type=submit] {
+    min-width: 5em;
+    padding: 0.5em;
+    font-size: 1em;
+    color: #fff;
+    background: #24b;
+    border-radius: 2px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2), 0 5px 7px rgba(0,0,0,0.2);
+    &:hover {
+        background: #35c;
+    }
+    &[disabled] {
+        background: #ddd;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 2px 3px rgba(0,0,0,0.2);
+    }
+}
