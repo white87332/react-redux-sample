@@ -12,7 +12,7 @@ class CommentForm extends Component
         };
     }
 
-    handleAuthorChange(e)
+    handleAuthorChange = (e) =>
     {
         this.setState(
         {
@@ -20,7 +20,7 @@ class CommentForm extends Component
         });
     }
 
-    handleTextChange(e)
+    handleTextChange = (e) =>
     {
         this.setState(
         {
@@ -28,7 +28,7 @@ class CommentForm extends Component
         });
     }
 
-    handleSubmit(e)
+    handleSubmit = (e) =>
     {
         e.preventDefault();
         var author = this.state.author.trim(),
@@ -50,12 +50,12 @@ class CommentForm extends Component
     render()
     {
         return (
-            <form className='comment-form' onSubmit={this.handleSubmit.bind(this)}>
+            <form className='comment-form' onSubmit={this.handleSubmit}>
             	<input
             		type='text'
             		placeholder='Name'
             		value={this.state.author}
-            		onChange={this.handleAuthorChange.bind(this)}
+            		onChange={this.handleAuthorChange}
             		maxLength='20'
             		className='name-input'
             		required
@@ -64,7 +64,7 @@ class CommentForm extends Component
             		type='text'
             		placeholder='Comment'
             		value={this.state.text}
-            		onChange={this.handleTextChange.bind(this)}
+            		onChange={this.handleTextChange}
             	/>
             	<input
             		type='submit'

@@ -37,12 +37,12 @@ class CommentBox extends Component
         };
     }
 
-    // componentDidMount()
-    // {
-    //     this.addRandomComment();
-    // }
+    componentDidMount = () =>
+    {
+        this.addRandomComment();
+    }
 
-    handleCommentSubmit(comment)
+    handleCommentSubmit = (comment) =>
     {
         comment.id = this.state.data.length + 1;
         this.setState(
@@ -51,7 +51,7 @@ class CommentBox extends Component
         });
     }
 
-    addRandomComment()
+    addRandomComment = () =>
     {
         this.handleCommentSubmit(commentData[0]);
         commentData.splice(0, 1);
@@ -68,7 +68,7 @@ class CommentBox extends Component
             <div className='comment-box'>
             	<h1>Comments</h1>
                 <CommentList data={this.state.data}/>
-            	<CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)}/>
+            	<CommentForm onCommentSubmit={this.handleCommentSubmit}/>
             </div>
         );
     }

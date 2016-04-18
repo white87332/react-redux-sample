@@ -12,7 +12,7 @@ class CommentList extends Component
 		this.comDisplay = $('.comment-list');
 	}
 
-	componentDidUpdate()
+	componentDidUpdate = () =>
 	{
 		let comHeight = this.comDisplay.outerHeight();
 		let comScroll = this.comDisplay[0].scrollHeight;
@@ -20,7 +20,7 @@ class CommentList extends Component
 		this.comDisplay.stop().animate({'scrollTop': comScroll - comHeight}, 200);
 	}
 
-	getStyles()
+	getStyles = () =>
 	{
 		let configs = this.props.data.map((val, index) => {
 			return {
@@ -47,27 +47,23 @@ class CommentList extends Component
 	{
 		return (
 			<TransitionMotion
-				styles={this.getStyles.bind(this)}
+				styles={this.getStyles}
 				willEnter={this.willEnter}
 				willLeave={this.willLeave}>
-				{
-					(interp) =>
-					{
-						return <div className='comment-list'>
-									{this.props.data.map((comment, i) =>
-									{
-										const { style } = interp[i];
-										return (
-											<div className='comment-node' author={comment.author} key={comment.id} style={style}>
-												<div className='print-author'>
-													{comment.author + ' - '}
-												</div>
-												{comment.text}
-											</div>
-										);
-									})}
-								</div>;
-					}
+				{interp =>
+					<div className='comment-list'>
+						{this.props.data.map((comment, i) => {
+							const {...style} = interp[i + 1];
+							return (
+								<div className='comment-node' author={comment.author} key={comment.id} style={style}>
+									<div className='print-author'>
+										{comment.author + ' - '}
+									</div>
+									{comment.text}
+								</div>
+							)
+						})}
+					</div>
 				}
 			</TransitionMotion>
 		);

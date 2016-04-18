@@ -22,8 +22,9 @@ const loadConmponentAsync = bundle => (location, callback) =>
 const routes = (
 	<Router history={history}>
 		<Route getComponent={loadConmponentAsync(require('bundle?lazy&name=layout!../components/layout/layout'))}>
+			<Route  path= "/transMotion" getComponent={loadConmponentAsync(require('bundle?lazy&name=transMotion!../components/transMotion/transMotion'))} />
 			<Route  path= "/sortable" getComponent={loadConmponentAsync(require('bundle?lazy&name=sortable!../components/sortable/sortable'))} />
-			<Route  path= "/todoList" getComponent={loadConmponentAsync(require('bundle?lazy&name=sortable!../components/todoList/todoList'))} />
+			<Route  path= "/todoList" getComponent={loadConmponentAsync(require('bundle?lazy&name=todoList!../components/todoList/todoList'))} />
 			<Route  path= "/commentBox" getComponent={loadConmponentAsync(require('bundle?lazy&name=commentBox!../components/commentBox/commentBox'))} />
 			<Route  path= "/carousel" getComponent={loadConmponentAsync(require('bundle?lazy&name=carousel!../components/carousel/carousel'))} />
 			<Route  path= "/draggableBalls" getComponent={loadConmponentAsync(require('bundle?lazy&name=draggableBalls!../components/draggableBalls/draggableBalls'))} />
