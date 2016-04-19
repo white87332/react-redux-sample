@@ -8,56 +8,70 @@ class TransMotion extends Component
         super();
         this.state = {
             items: [
-                {key: 'a', size: 100},
-                {key: 'b', size: 200},
-                {key: 'c', size: 300}
+                {key: 'a', width: 100, height: 100, opacity: 1},
+                {key: 'b', width: 100, height: 100, opacity: 1},
+                {key: 'c', width: 100, height: 100, opacity: 1}
             ]
         };
-    }
-
-    componentDidMount()
-    {
-        this.setState({
-            items: [
-                {key: 'a', size: 100},
-                {key: 'b', size: 200},
-                {key: 'c', size: 200},
-                {key: 'd', size: 200}
-            ]
-        });
     }
 
     willLeave()
     {
         // triggered when c's gone. Keeping c until its width/height reach 0.
-        return {width: spring(0), height: spring(0)};
+        return { width: spring(100), height: spring(100), opacity: spring(0)};
     }
 
     willEnter()
     {
         // triggered when c's gone. Keeping c until its width/height reach 0.
-        return {width: spring(0), height: spring(1)};
+        return { width: 100, height: 100, opacity: 0};
     }
 
+    del()
+    {
+        this.setState({
+            items: [
+                {key: 'a', width: 100, height: 100, opacity: 1},
+                {key: 'b', width: 100, height: 100, opacity: 1}
+            ]
+        });
+    }
+
+    add()
+    {
+        this.setState({
+            items: [
+                {key: 'a', width: 100, height: 100, opacity: 1},
+                {key: 'b', width: 100, height: 100, opacity: 1},
+                {key: 'c', width: 100, height: 100, opacity: 1},
+                {key: 'd', width: 100, height: 100, opacity: 1}
+            ]
+        });
+    }
+
+    // update css => willEnter -> add, 
     render()
     {
         return (
-          <TransitionMotion
-            willEnter={this.willEnter}
-            willLeave={this.willLeave}
-            styles={this.state.items.map(item => ({
-              key: item.key,
-              style: {width: item.size, height: item.size},
-            }))}>
-            {interpolatedStyles =>
-              // first render: a, b, c. Second: still a, b, c! Only last one's a, b.
-              <div>
-                {interpolatedStyles.map(config => {
-                    return <div key={config.key} style={{...config.style, border: '1px solid'}} />
-                })}
-              </div>
-            }
-          </TransitionMotion>
+            <div>
+                <TransitionMotion
+                    willEnter={this.willEnter}
+                    willLeave={this.willLeave}
+                    styles={this.state.items.map(item => ({
+                        key: item.key,
+                        style: {width: spring(item.width), height: spring(item.height), opacity: spring(item.opacity)},
+                    }))}>
+                    {styles =>
+                        <div>
+                            {styles.map(config => {
+                                return <div key={config.key} style={{...config.style, border: '1px solid'}} />
+                            })}
+                        </div>
+                    }
+                </TransitionMotion>
+                <button onClick={this.add.bind(this)}>add</button>
+                <button onClick={this.del.bind(this)}>del</button>
+            </div>
         );
     }
 }
