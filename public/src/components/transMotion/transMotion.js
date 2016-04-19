@@ -49,7 +49,7 @@ class TransMotion extends Component
         });
     }
 
-    // update css => willEnter -> add, 
+    // update css => willEnter -> add,
     render()
     {
         return (
@@ -59,7 +59,7 @@ class TransMotion extends Component
                     willLeave={this.willLeave}
                     styles={this.state.items.map(item => ({
                         key: item.key,
-                        style: {width: spring(item.width), height: spring(item.height), opacity: spring(item.opacity)},
+                        style: {width: item.width, height: item.height, opacity: spring(item.opacity)},
                     }))}>
                     {styles =>
                         <div>
