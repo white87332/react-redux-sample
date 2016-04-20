@@ -21,7 +21,7 @@
   "homepage": "",
   "dependencies": {
     "classnames": "^2.2.3",
-    "immutable": "^3.8.0",
+    "immutable": "^3.8.1",
     "lodash": "^4.11.1",
     "object-assign": "^4.0.1",
     "react": "^15.0.1",
@@ -33,7 +33,7 @@
     "react-redux": "^4.4.4",
     "react-router": "^2.3.0",
     "react-router-redux": "^4.0.2",
-    "redux": "^3.4.0",
+    "redux": "^3.5.0",
     "redux-thunk": "^2.0.1",
     "superagent": "^1.8.3"
   },
