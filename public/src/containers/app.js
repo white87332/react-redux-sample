@@ -22,6 +22,7 @@ const loadConmponentAsync = bundle => (location, callback) =>
 const routes = (
 	<Router history={history}>
 		<Route getComponent={loadConmponentAsync(require('bundle?lazy&name=layout!../components/layout/layout'))}>
+			<Route  path= "/selectArea" getComponent={loadConmponentAsync(require('bundle?lazy&name=selectArea!../components/selectArea/selectArea'))} />
 			<Route  path= "/drag" getComponent={loadConmponentAsync(require('bundle?lazy&name=drag!../components/drag/drag'))} />
 			<Route  path= "/dnd" getComponent={loadConmponentAsync(require('bundle?lazy&name=board!../components/dnd/dnd'))} />
 			<Route  path= "/transMotion" getComponent={loadConmponentAsync(require('bundle?lazy&name=transMotion!../components/transMotion/transMotion'))} />

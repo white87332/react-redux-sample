@@ -10,6 +10,6 @@
         height: 100px;
         background-color: skyblue;
         @include user-select(none);
-        cursor:move;
+        cursor: move;
     }
 }
