@@ -1,8 +1,10 @@
 
-import './selectArea.scss';
 import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import { addEventListener, removeEventListener } from '../../utils/event';
+import { forIn } from 'lodash';
 import Drag from '../drag/drag';
+import createSelectable from './createSelectable';
 
 class SelectArea extends Component
 {
@@ -12,6 +14,28 @@ class SelectArea extends Component
         this.state = {
             style: {
                 display: "none"
+            }
+        };
+
+        this.selectableItems = [];
+        this.act = null;
+    }
+
+    getChildContext()
+    {
+        // context可以將資料做父子間的上或下傳遞
+        return {
+            selectable: {
+                register: (key, domNode) => {
+                    this.selectableItems.push(
+                    {
+                        key,
+                        domNode
+                    });
+                },
+                unregister: (key) => {
+                    this.selectableItems = this.selectableItems.filter(data => data.key !== key);
+                }
             }
         };
     }
@@ -32,14 +56,18 @@ class SelectArea extends Component
 
     mouseDown(e)
     {
+        e.stopPropagation();
+        this.act = "mouseDown";
         this.initX = e.pageX || e.clientX;
         this.initY = e.pageY || e.clientY;
     }
 
     mouseMove(e)
     {
+        e.stopPropagation();
         if(this.initX !== undefined && this.initY !== undefined)
         {
+            this.act = "mouseMove";
             let mousePosX = e.pageX || e.clientX;
             let mousePosY = e.pageY || e.clientY;
 
@@ -57,6 +85,8 @@ class SelectArea extends Component
 
             this.setState({
                 style: {
+                    position: 'absolute',
+                    zIndex: 1,
                     display: "block",
                     border: "1px solid #000",
                     left,
@@ -70,27 +100,66 @@ class SelectArea extends Component
 
     mouseUp(e)
     {
+        e.stopPropagation();
         this.initX = this.initY = undefined;
-        this.setState({
-            style: {
-                display: "none"
+        
+        if(this.act === "mouseMove")
+        {
+            this.selectElements();
+            this.setState({
+                style: {
+                    display: "none"
+                }
+            });
+
+            this.act = "mouseUp";
+        }
+    }
+
+    selectElements()
+    {
+        let selectedItems = [];
+        let selectDiv = findDOMNode(this.refs.selectDiv);
+
+        forIn(this.selectableItems, (dataObj) =>
+        {
+            // 判斷是否在圈選範圍內
+            if(this.collide(this.refs.selectDiv, dataObj.domNode))
+            {
+                selectedItems.push(dataObj.key);
             }
         });
+
+        this.props.onHandled(selectedItems);
+    }
+
+    collide(selectDiv, domNode)
+    {
+        return !(
+            ((selectDiv.offsetTop + selectDiv.offsetHeight) < domNode.offsetTop) ||
+            ((selectDiv.offsetTop) > (domNode.offsetTop + domNode.offsetHeight)) ||
+            ((selectDiv.offsetLeft + selectDiv.offsetWidth) < domNode.offsetLeft) ||
+            ((selectDiv.offsetLeft) > (domNode.offsetLeft + domNode.offsetWidth))
+        );
     }
 
     render()
     {
         return (
-            <div className='selectArea' ref="selectArea">
-                <div className='area' style={this.state.style}>
-                </div>
-                <Drag />
+            <div ref="selectArea">
+                <div ref="selectDiv" style={this.state.style} />
+                {this.props.children}
             </div>
         );
     }
 }
 
 SelectArea.defaultProps = {};
-SelectArea.propTypes = {};
+SelectArea.propTypes = {
+    onHandled: PropTypes.func.isRequired
+};
+SelectArea.childContextTypes = {
+    selectable: PropTypes.object
+};
 
-export default SelectArea;
+export { SelectArea, createSelectable };

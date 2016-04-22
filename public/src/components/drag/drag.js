@@ -16,6 +16,7 @@ class Drag extends Component
 
     mouseDown(e)
     {
+        e.stopPropagation();
         let mousePosX = e.pageX || e.clientX;
         let mousePosY = e.pageY || e.clientY;
 
@@ -26,6 +27,7 @@ class Drag extends Component
 
     mouseMove(e)
     {
+        e.stopPropagation();
         let mousePosX = e.pageX || e.clientX;
         let mousePosY = e.pageY || e.clientY;
 
@@ -53,6 +55,7 @@ class Drag extends Component
 
     mouseUp(e)
     {
+        e.stopPropagation();
         this.diffX = this.diffY = undefined;
     }
 
