@@ -88,7 +88,8 @@ class SelectArea extends Component
                     position: 'absolute',
                     zIndex: 1,
                     display: "block",
-                    border: "1px solid #000",
+                    border: "1px solid #999",
+                    backgroundColor: "rgba(178, 178, 178, 0.3)",
                     left,
                     top,
                     width,
@@ -102,7 +103,7 @@ class SelectArea extends Component
     {
         e.stopPropagation();
         this.initX = this.initY = undefined;
-        
+
         if(this.act === "mouseMove")
         {
             this.selectElements();
