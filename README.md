@@ -8,7 +8,9 @@ some examples:
 2. select area ( HOC )
 3. drag ( by css )
 4. dnd ( react-dnd )
-5. motion ( react-motion )
+5. transMotion ( react-motion )
+6. sortable ( by drag )
+7. draggableBalls ( react-motion )
 
 ## Installation
 
