@@ -32,9 +32,8 @@
         opacity: 0.5;
         backface-visibility: hidden;
         transform: rotateY(65deg) translateZ($translate-amount);
-        transition-property: opacity, transform, visibility;
-        transition-duration: 0.25s, 0.5s, 0.5s;
-        transition-timing-function: ease-out;
+        transition: opacity, transform, visibility, 0.25s, 0.5s, 0.5s, ease-out;
+
         &--shown {
             visibility: visible;
             opacity: 1;

@@ -1,5 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
+
 module.exports = {
     entry:
     {
@@ -33,18 +35,22 @@ module.exports = {
             loader: "json-loader"
         },
         {
-            test: /\.css$/,
-            loader: "style-loader!css-loader"
-        },
-        {
-            test: /\.scss$/,
-            loader: "style-loader!css-loader!sass-loader?includePaths[]=" + path.resolve(__dirname, "./node_modules/compass-mixins/lib")
+            test: /\.css|\.scss$/,
+            loaders: [
+                "style",
+                "css",
+                "sass?includePaths[]=" + path.resolve(__dirname, "./node_modules/compass-mixins/lib"),
+                "postcss"
+            ]
         },
         {
             test: /\.(jpe?g|png|gif|svg)$/i,
             loader: 'url-loader?limit=8192&name=./asset/img/[name].[ext]'
         }]
     },
+    postcss: [
+        autoprefixer
+    ],
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),

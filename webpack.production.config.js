@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry:
@@ -42,7 +43,7 @@ module.exports = {
             test: /\.css|\.scss$/,
             loader: ExtractTextPlugin.extract(
                 "style-loader",
-                'css-loader!sass-loader?includePaths[]=' + path.resolve(__dirname, './node_modules/compass-mixins/lib')
+                'css-loader!sass-loader?includePaths[]=' + path.resolve(__dirname, './node_modules/compass-mixins/lib') + "!postcss-loader"
             )
         },
         {
@@ -50,6 +51,9 @@ module.exports = {
             loader: 'url-loader?limit=8192&name=./asset/img/[name].[ext]'
         }]
     },
+    postcss: [
+        autoprefixer
+    ],
     plugins: [
         new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }}),
         // new webpack.optimize.CommonsChunkPlugin('vendors', 'asset/js/vendors.min.js'),
