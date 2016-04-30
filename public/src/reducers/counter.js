@@ -1,4 +1,3 @@
-import objectAssign from 'object-assign';
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/counter';
 
 const initialState = {
@@ -10,11 +9,11 @@ export default function counter(state = initialState, action = {})
     switch (action.type)
     {
         case INCREMENT_COUNTER:
-            return objectAssign({}, state, {
+            return Object.assign({}, state, {
                 'numbers': state.numbers + 1
             });
         case DECREMENT_COUNTER:
-            return objectAssign({}, state, {
+            return Object.assign({}, state, {
                 'numbers': state.numbers - 1
             });
         default:
