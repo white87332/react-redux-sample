@@ -35,15 +35,15 @@ class DonutEach extends Component
             height: 210,
             data: [{
                 "label": "big",
-                "percent": 15
+                "percent": 25
             },
             {
                 "label": "big",
-                "percent": 20
+                "percent": 30
             },
             {
                 "label": "normal",
-                "percent": 65
+                "percent": 45
             }],
             color: ["#ffa22f",  "#f2e", "#e5e5e5"]
         });

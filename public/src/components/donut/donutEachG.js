@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { clone } from 'lodash';
 import d3 from 'd3';
 
 class DonutEachG extends Component
@@ -18,25 +17,18 @@ class DonutEachG extends Component
                         return this.props.color[this.props.iKey];
                     })
                     .attr("d", this.getArc.bind(this));
-        this.prevData = this.props.data;
     }
 
-    componentWillUpdate()
+    componentWillReceiveProps(nextProps)
     {
+        this.current = this.props.data;
+        this.next = nextProps.data;
         this.path.transition().duration(500).attrTween("d", this.arcTween.bind(this));
-    }
-
-    componentDidUpdate()
-    {
-        this.prevData = this.props.data;
     }
 
     arcTween()
     {
-        var i = d3.interpolate(this.props.data, this.prevData);
-        let current = clone(this.props.data);
-        console.log(i(0));
-        current = i(0);
+        var i = d3.interpolate(this.current, this.next);
         return (t) =>
         {
             if(this.props.label === 'big')
@@ -69,17 +61,10 @@ class DonutEachG extends Component
 
     render()
     {
-        let { width, height, data, color, label } = this.props;
         return (
-            <g>
-                <path ref="path" />
-            </g>
+            <path ref="path" />
         );
     }
 }
-
-{/*<g>
-    <path fill={color[this.props.iKey]} d={this.getArc.call(this)} />
-</g>*/}
 
 export default DonutEachG;

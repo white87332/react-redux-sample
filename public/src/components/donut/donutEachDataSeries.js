@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import d3 from 'd3';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import DonutEachG from './donutEachG';
 
 class DonutEachDataSeries extends Component
