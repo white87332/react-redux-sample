@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import d3 from 'd3';
-import DonutEachG from './donutEachG';
+import DonutEachPath from './donutEachPath';
 
 class DonutEachDataSeries extends Component
 {
@@ -21,7 +21,7 @@ class DonutEachDataSeries extends Component
         let pies = (pie(data)).map((pieData, i) =>
         {
             return (
-                <DonutEachG data={pieData} label={data[i].label} iKey={i} key={i} color={color} width={width} height={height} />
+                <DonutEachPath data={pieData} label={data[i].label} iKey={i} key={i} color={color} width={width} height={height} />
             );
         });
 
