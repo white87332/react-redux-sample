@@ -1,0 +1,32 @@
+.example-enter
+{
+    opacity: .01;
+}
+.example-enter.example-enter-active
+{
+    transition: opacity 500ms ease-in;
+
+    opacity: 1;
+}
+.example-leave
+{
+    opacity: 1;
+}
+.example-leave.example-leave-active
+{
+    transition: opacity 300ms ease-in;
+
+    opacity: .01;
+}
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+path {
+    transition: width 0.5s linear;
+}

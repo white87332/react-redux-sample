@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import d3 from 'd3';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import DonutEachG from './donutEachG';
 
 class DonutEachDataSeries extends Component
@@ -25,9 +26,11 @@ class DonutEachDataSeries extends Component
             );
         });
 
-        let position = "translate(" + 240 + "," + 240 + ")";
+        let position = "translate(" + width/2 + "," + height/2 + ")";
         return (
-            <g transform={position}>{pies}</g>
+            <g transform={position}>
+                {pies}
+            </g>
         );
     }
 }

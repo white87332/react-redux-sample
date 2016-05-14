@@ -9,18 +9,35 @@ class Donut extends Component
         super(props, context);
         this.state = {
             data: [
-                {apples:53245, oranges:200},
-                {apples:28479, oranges:200},
-                {apples:19697,oranges:200},
-                {apples:24037,oranges:200},
-                {apples:40245,oranges:200}
+                {apples:53245},
+                {apples:28479},
+                {apples:19697},
+                {apples:24037},
+                {apples:40245}
             ]
         };
+
+        // this.drawFauxDOM = ReactFauxDOM.mixins.core.drawFauxDOM.bind(this);
+        // this.componentWillMount =  ReactFauxDOM.mixins.core.componentWillMount.bind(this);
+        // this.connectFauxDOM =  ReactFauxDOM.mixins.core.connectFauxDOM.bind(this);
+        //
+        // this.animateFauxDOM = ReactFauxDOM.mixins.anim.animateFauxDOM.bind(this);
+        // this.isAnimatingFauxDOM = ReactFauxDOM.mixins.anim.isAnimatingFauxDOM.bind(this);
+        // this.componentWillUnmount = ReactFauxDOM.mixins.anim.componentWillUnmount.bind(this);
+        // this.stopAnimatingFauxDOM = ReactFauxDOM.mixins.anim.stopAnimatingFauxDOM.bind(this);
     }
 
-    donut()
+    componentDidMount()
     {
-        let faux = ReactFauxDOM.createElement('div');
+        // let faux = this.connectFauxDOM('div', 'chart');
+let data =
+    [
+        {apples:53245},
+        {apples:28479},
+        {apples:19697},
+        {apples:24037},
+        {apples:40245}
+    ];
 
         var width = 960,
             height = 500,
@@ -29,7 +46,7 @@ class Donut extends Component
         var color = d3.scale.category20();
 
         this.pie = d3.layout.pie()
-            .value(function(d)
+            .value((d) =>
             {
                 return d.apples;
             })
@@ -37,15 +54,16 @@ class Donut extends Component
 
         this.arc = d3.svg.arc().innerRadius(radius - 100).outerRadius(radius - 20);
 
-        var svg = d3.select(faux)
+        // var svg = d3.select(faux)
+        var svg = d3.select(".donut")
                     .append("svg")
                     .attr("width", width)
                     .attr("height", height)
                     .append("g")
                     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-        this.path = svg.selectAll("path")
-                        .data(this.pie(this.state.data))
+        this.path = svg.datum(data).selectAll("path")
+                        .data(this.pie)
                         .enter()
                         .append("path")
                         .attr("fill", (d, i) =>
@@ -55,34 +73,41 @@ class Donut extends Component
                         .attr("d", this.arc)
                         .each((d) =>
                         {
+                            // console.log(d);
                             this._current = d;
                         }); // store the initial angles
 
-        return faux.toReact();
+        // this.path.transition().duration(500).attrTween("d", this.arcTween.bind(this));
+        // this.animateFauxDOM(500);
     }
 
     change()
     {
-        var value = this.value;
-        clearTimeout(timeout);
-        this.pie.value((d) =>
-        {
-            return d[value];
-        }); // change the value function
-        this.path = path.data(pie); // compute the new angles
-        this.path.transition().duration(750).attrTween("d", this.arcTween.bind(this)); // redraw the arcs
-    }
+        let data = [
+            {apples:200},
+            {apples:200},
+            {apples:200},
+            {apples:200},
+            {apples:200},
+        ];
 
-    type(d)
-    {
-        d.apples = + d.apples;
-        d.oranges = + d.oranges;
-        return d;
+        // var value = this.value;
+
+        // this.pie.value((d) =>
+        // {
+        //     return d.apples;
+        // }); // change the value function
+
+        this.path = this.path.data(this.pie(data)); // compute the new angles
+        this.path.transition().duration(500).attrTween("d", this.arcTween.bind(this)); // redraw the arcs
+
+        // this.animateFauxDOM(500);
     }
 
     arcTween(a)
     {
         var i = d3.interpolate(this._current, a);
+        // console.log(this._current, a);
         this._current = i(0);
         return (t) =>
         {
@@ -93,8 +118,8 @@ class Donut extends Component
     render()
     {
         return (
-            <div className="donut">
-                {this.donut.call(this)}
+            <div className="donut" onClick={this.change.bind(this)}>
+                {/*{this.state.chart}*/}
             </div>
         );
     }
