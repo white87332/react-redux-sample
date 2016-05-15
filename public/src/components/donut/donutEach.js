@@ -1,4 +1,3 @@
-import './donut.scss';
 import React, { Component } from 'react';
 import d3 from 'd3';
 import DonutSvg from './donutSvg';
