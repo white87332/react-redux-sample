@@ -1,3 +1,4 @@
+import './counter.scss';
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -41,6 +42,8 @@ class Counter extends Component
               <button onClick={incrementIfOdd}>Increment if odd</button>
               {' '}
               <button onClick={() => incrementAsync()}>Increment async</button>
+              <div className="icon-Q4O9ANJ"></div>
+              <i className="icon icon-Q4O9ANJ"></i>
             </div>
         );
     }
