@@ -2,7 +2,7 @@
 
 This is a react-redux template, use react, redux, react-router, webpack, babel6
 
-some examples: 
+some examples:
 
 1. counter
 2. select area ( HOC )
@@ -11,6 +11,7 @@ some examples:
 5. transMotion ( react-motion )
 6. sortable ( by drag )
 7. draggableBalls ( react-motion )
+8. donut ( d3 )
 
 ## Installation
 
