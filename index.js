@@ -9,9 +9,8 @@ var app = express();
 var port = 3000;
 
 var compiler = webpack(config);
-var rootPath = path.normalize(__dirname);
 
-app.use(express.static(rootPath + '/public'));
+app.use(express.static(path.resolve('public')));
 app.use(webpackDevMiddleware(compiler,
 {
     noInfo: true,
