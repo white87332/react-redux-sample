@@ -13,6 +13,7 @@ export default function createRoutes(history)
 {
     return (
         <Router history={history}>
+			<Route path= "/" getComponent={loadConmponentAsync(require('bundle?lazy&name=counter!../components/counter/counter'))} />
     		<Route getComponent={loadConmponentAsync(require('bundle?lazy&name=layout!../components/layout/layout'))}>
     			<Route path= "/selectItems" getComponent={loadConmponentAsync(require('bundle?lazy&name=selectItems!../components/selectItems/selectItems'))} />
     			<Route path= "/drag" getComponent={loadConmponentAsync(require('bundle?lazy&name=drag!../components/drag/drag'))} />

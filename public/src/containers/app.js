@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import configureStore from '../store/configureStore.js';
 import { syncHistoryWithStore } from 'react-router-redux';
 import createRoutes from '../routes/routes';
-import { trigger } from 'redial';
 
 // store
 const store = configureStore();
@@ -15,8 +14,6 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 // routes
 const routes = createRoutes(history);
-
-
 
 render(
 	<Provider store={store}>
