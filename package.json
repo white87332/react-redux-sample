@@ -1,7 +1,7 @@
 {
   "name": "react-redux",
-  "version": "0.1.0",
-  "description": "react-redux prototype project",
+  "version": "0.2.0",
+  "description": "react-redux project",
   "scripts": {
     "start": "node index.js",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
@@ -34,7 +34,7 @@
     "react-motion": "^0.4.3",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
-    "react-router-redux": "^4.0.4",
+    "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "superagent": "^2.0.0"
@@ -54,7 +54,6 @@
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "gulp": "^3.9.1",
     "gulp-imagemin": "^3.0.1",
     "gulp-stylus": "^2.4.0",
     "gulp-svg-sprites": "^3.0.0",
