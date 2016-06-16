@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var spritesmith = require('gulp.spritesmith');
-var svgSprite = require('gulp-svg-sprites');
+// var svgSprite = require('gulp-svg-sprites');
 var imagemin = require('gulp-imagemin');
 
 gulp.task('imageMin', function()
@@ -25,15 +25,15 @@ gulp.task('spriteImg', function()
     spriteData.css.pipe(gulp.dest('./public/asset/css/sprite'));
 });
 
-gulp.task('spriteSvg', function()
-{
-    gulp.src('./public/asset/img/min/*.svg')
-        .pipe(svgSprite({
-            cssFile: "./css/sprite/spriteSvg.css",
-            svgPath: "./img/sprite/spriteSvg.svg",
-            preview: false
-        }))
-        .pipe(gulp.dest('./public/asset'));
-});
+// gulp.task('spriteSvg', function()
+// {
+//     gulp.src('./public/asset/img/min/*.svg')
+//         .pipe(svgSprite({
+//             cssFile: "./css/sprite/spriteSvg.css",
+//             svgPath: "./img/sprite/spriteSvg.svg",
+//             preview: false
+//         }))
+//         .pipe(gulp.dest('./public/asset'));
+// });
 
 gulp.task('default', ['spriteSvg']);
