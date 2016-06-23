@@ -31,7 +31,7 @@ class Counter extends Component
         } = this.props;
 
         return (
-            <div className="a">
+            <div className="counter">
               Clicked: {numbers} times
               {' '}
               <button onClick={increment}>+</button>
@@ -41,8 +41,6 @@ class Counter extends Component
               <button onClick={incrementIfOdd}>Increment if odd</button>
               {' '}
               <button onClick={() => incrementAsync()}>Increment async</button>
-              <div className="icon-Q4O9ANJ"></div>
-              <i className="icon icon-Q4O9ANJ"></i>
             </div>
         );
     }
