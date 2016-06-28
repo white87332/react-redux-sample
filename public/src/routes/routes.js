@@ -25,6 +25,7 @@ export default function createRoutes(history)
     			<Route path= "/posts" getComponent={loadConmponentAsync(require('bundle?lazy&name=posts!../components/posts/posts'))} />
     			<Route path= "/counter" getComponent={loadConmponentAsync(require('bundle?lazy&name=counter!../components/counter/counter'))} />
     			<Route path= "/donut" getComponent={loadConmponentAsync(require('bundle?lazy&name=donut!../components/donut/donut'))} />
+				<Route path= "/slider" getComponent={loadConmponentAsync(require('bundle?lazy&name=donut!../components/slider/slider'))} />
     		</Route>
         </Router>
     );
