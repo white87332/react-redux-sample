@@ -1,8 +1,6 @@
 import './slider.scss';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import isNode from 'detect-node';
 
 class Slider extends Component
 {
@@ -92,14 +90,14 @@ class Slider extends Component
                 {/*content*/}
                 <div className="content">
                     <div className="title">
-                        <h1>123</h1>
+                        <h1>title</h1>
                     </div>
                     <div className="description">
-                        <h2>4564564564564654654564564566544544564654546545656456564565656465456456456</h2>
+                        <h2>description</h2>
                     </div>
                     <div className="link">
                         <div className="go">
-                            <a>立即觀看</a>
+                            <a>see it</a>
                         </div>
                     </div>
                 </div>
@@ -116,4 +114,4 @@ class Slider extends Component
     }
 }
 
-export default connect()(Slider);
+export default Slider;
