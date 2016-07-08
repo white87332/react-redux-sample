@@ -13,7 +13,7 @@ const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
 // routes
-const routes = createRoutes(history);
+const routes = createRoutes(history, store, store.dispatch);
 
 render(
 	<Provider store={store}>

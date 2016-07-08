@@ -25,16 +25,9 @@ class Posts extends Component
         super(props);
     }
 
-    componentDidMount()
-    {
-        const { postsList } = this.props.actions;
-        postsList();
-    }
-
     render()
     {
         const { posts } = this.props;
-
         let items = posts.list.map((data, key) => {
             return <div key={key}>{data.title}</div>;
         });

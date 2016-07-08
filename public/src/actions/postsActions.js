@@ -3,7 +3,7 @@ import request from 'superagent';
 
 export function postsList()
 {
-    return (dispatch) =>
+    return new Promise((resolve, reject) =>
     {
         let url = "https://api.isuncrowd.com/zh/posts";
         request.get(url)
@@ -12,19 +12,22 @@ export function postsList()
             {
                 if (err || res.status !== 200 || res.body.result !== 1)
                 {
-                    dispatch(
+                    if(err || res.status !== 200)
                     {
-                        type: types.GET_ERR
-                    });
+                        reject(new Error(err));
+                    }
+                    else
+                    {
+                        reject(new Error(res.body.message));
+                    }
                 }
                 else
                 {
-                    dispatch(
-                    {
+                    resolve({
                         type: types.GET_LATEST_LIST,
                         data: res.body.data
                     });
                 }
             });
-    };
+    });
 }
