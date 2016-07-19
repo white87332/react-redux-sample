@@ -32,12 +32,12 @@
     "react-dom": "^15.2.1",
     "react-motion": "^0.4.3",
     "react-redux": "^4.4.5",
-    "react-router": "^2.5.2",
+    "react-router": "^2.6.0",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
-    "superagent": "^2.0.0"
+    "superagent": "^2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
