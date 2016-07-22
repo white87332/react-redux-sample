@@ -8,6 +8,7 @@ module.exports = {
     entry:
     {
         app: [
+            'babel-polyfill',
             './public/src/containers/app',
         ]
     },
