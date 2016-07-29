@@ -23,13 +23,13 @@
     "classnames": "^2.2.5",
     "d3": "^3.5.17",
     "immutable": "^3.8.1",
-    "lodash": "^4.13.1",
+    "lodash": "^4.14.1",
     "normalize.css": "^4.2.0",
-    "react": "^15.2.1",
-    "react-addons-css-transition-group": "^15.2.1",
+    "react": "^15.3.0",
+    "react-addons-css-transition-group": "^15.3.0",
     "react-dnd": "^2.1.4",
     "react-dnd-html5-backend": "^2.1.2",
-    "react-dom": "^15.2.1",
+    "react-dom": "^15.3.0",
     "react-motion": "^0.4.3",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.0",
@@ -62,13 +62,13 @@
     "node-sass": "^3.8.0",
     "postcss-flexibility": "^1.1.0",
     "postcss-loader": "^0.8.2",
-    "react-addons-perf": "^15.2.1",
+    "react-addons-perf": "^15.3.0",
     "react-transform-hmr": "^1.0.4",
     "sass-loader": "^3.2.3",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.12.1"
+    "webpack-hot-middleware": "^2.12.2"
   }
 }
