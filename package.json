@@ -34,7 +34,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "react-router-redux": "^4.0.5",
-    "redux": "^3.5.2",
+    "redux": "^3.6.0",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
     "superagent": "^2.2.0"
@@ -59,7 +59,7 @@
     "gulp.spritesmith": "^6.2.1",
     "json-loader": "^0.5.4",
     "node-libs-browser": "^1.0.0",
-    "node-sass": "^3.8.0",
+    "node-sass": "^3.9.3",
     "postcss-flexibility": "^1.1.0",
     "postcss-loader": "^0.8.2",
     "react-addons-perf": "^15.3.1",
