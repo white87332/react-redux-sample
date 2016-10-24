@@ -1,6 +1,6 @@
 {
   "name": "react-redux",
-  "version": "0.2.0",
+  "version": "0.5.0",
   "description": "react-redux project",
   "scripts": {
     "start": "node index.js",
@@ -22,9 +22,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "d3": "^3.5.17",
-    "immutable": "^3.8.1",
     "lodash": "^4.16.4",
-    "normalize.css": "^4.2.0",
+    "normalize.css": "^5.0.0",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.3.2",
     "react-addons-update": "^15.3.2",
@@ -41,7 +40,7 @@
     "superagent": "^2.3.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.0",
+    "autoprefixer": "^6.5.1",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-react-transform": "^2.0.2",
@@ -51,10 +50,10 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "bundle-loader": "^0.5.4",
-    "css-loader": "^0.23.1",
+    "css-loader": "^0.25.0",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
+    "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
     "gulp-imagemin": "^3.0.3",
     "gulp.spritesmith": "^6.2.1",
@@ -62,14 +61,14 @@
     "node-libs-browser": "^1.0.0",
     "node-sass": "^3.10.1",
     "postcss-flexibility": "^1.1.0",
-    "postcss-loader": "^0.8.2",
+    "postcss-loader": "^1.0.0",
     "react-addons-perf": "^15.3.2",
     "react-transform-hmr": "^1.0.4",
-    "sass-loader": "^3.2.3",
+    "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.4",
-    "webpack-hot-middleware": "^2.12.2"
+    "webpack-hot-middleware": "^2.13.0"
   }
 }
