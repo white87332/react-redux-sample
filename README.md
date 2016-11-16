@@ -1,4 +1,4 @@
-# react-redux
+# react-redux-sample
 
 This is a react-redux template, use react, redux, react-router, webpack, babel6
 
