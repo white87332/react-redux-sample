@@ -59,8 +59,10 @@ module.exports = {
     ],
     plugins: [
         new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }}),
-        // new webpack.optimize.CommonsChunkPlugin('vendors', 'asset/js/vendors.min.js'),
-        new ExtractTextPlugin('./asset/css/bundle/bundle.min.css', { allChunks: true }),
-        new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.DedupePlugin(),
+        // new webpack.optimize.CommonsChunkPlugin('/asset/js/bundle/common.js'),
+        new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
+        new ExtractTextPlugin('./asset/css/bundle/bundle.min.css', { allChunks: true })
     ]
 };
