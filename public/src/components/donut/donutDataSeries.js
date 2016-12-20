@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import d3 from 'd3';
+import * as d3 from 'd3';
 import DonutPath from './donutPath';
 
 class DonutDataSeries extends Component
@@ -13,7 +13,8 @@ class DonutDataSeries extends Component
     render()
     {
         let { data, color, width, height } = this.props;
-        let pie = d3.layout.pie().sort(null).value((data) =>
+
+        let pie = d3.pie().sort(null).value((data) =>
         {
             return data.percent;
         });

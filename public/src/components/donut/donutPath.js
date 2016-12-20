@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import d3 from 'd3';
+import * as d3 from 'd3';
 
 class DonutPath extends Component
 {
@@ -37,8 +37,9 @@ class DonutPath extends Component
     {
         let { width, height, data, color, label } = this.props;
         let radius = Math.min(width, height) / 2;
-        this.bigArc = d3.svg.arc().outerRadius(radius - 33).innerRadius(radius - 13);
-        this.normalArc = d3.svg.arc().outerRadius(radius - 18).innerRadius(radius - 30);
+
+        this.bigArc = d3.arc().outerRadius(radius - 33).innerRadius(radius - 13);
+        this.normalArc = d3.arc().outerRadius(radius - 18).innerRadius(radius - 30);
 
         if (label == "big")
         {
