@@ -39,6 +39,7 @@ export default function createRoutes(history, store, dispatch)
     			<Route path= "/counter" getComponent={loadConmponentAsync(require('bundle?lazy&name=counter!../components/counter/counter'))} />
     			<Route path= "/donut" getComponent={loadConmponentAsync(require('bundle?lazy&name=donut!../components/donut/donut'))} />
 				<Route path= "/slider" getComponent={loadConmponentAsync(require('bundle?lazy&name=donut!../components/slider/slider'))} />
+				<Route path= "/areaChart" getComponent={loadConmponentAsync(require('bundle?lazy&name=areaChart!../components/areaChart/areaChart'))} />
     		</Route>
         </Router>
     );
