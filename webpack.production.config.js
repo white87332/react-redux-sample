@@ -2,7 +2,6 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var autoprefixer = require('autoprefixer');
-var flexibility = require('postcss-flexibility');
 
 module.exports = {
     entry:
@@ -54,8 +53,7 @@ module.exports = {
         }]
     },
     postcss: [
-        autoprefixer,
-        flexibility
+        autoprefixer
     ],
     plugins: [
         new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }}),
