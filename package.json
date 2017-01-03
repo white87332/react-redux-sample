@@ -23,7 +23,7 @@
     "classnames": "^2.2.5",
     "d3": "^4.4.0",
     "deep-equal": "^1.0.1",
-    "lodash": "^4.17.3",
+    "lodash": "^4.17.4",
     "normalize.css": "^5.0.0",
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.1",
@@ -42,7 +42,7 @@
     "superagent": "^3.3.1"
   },
   "devDependencies": {
-    "autoprefixer": "^6.6.0",
+    "autoprefixer": "^6.6.1",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-react-transform": "^2.0.2",
