@@ -21,17 +21,17 @@
   "homepage": "",
   "dependencies": {
     "classnames": "^2.2.5",
-    "d3": "^4.4.0",
+    "d3": "^4.4.1",
     "deep-equal": "^1.0.1",
     "lodash": "^4.17.4",
     "normalize.css": "^5.0.0",
-    "react": "^15.4.1",
-    "react-addons-css-transition-group": "^15.4.1",
-    "react-addons-update": "^15.4.1",
+    "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-addons-update": "^15.4.2",
     "react-chartjs-2": "^1.6.2",
     "react-dnd": "^2.1.4",
     "react-dnd-html5-backend": "^2.1.2",
-    "react-dom": "^15.4.1",
+    "react-dom": "^15.4.2",
     "react-motion": "^0.4.7",
     "react-redux": "^5.0.1",
     "react-router": "^3.0.0",
@@ -62,13 +62,13 @@
     "node-libs-browser": "^2.0.0",
     "node-sass": "^4.1.1",
     "postcss-loader": "^1.2.1",
-    "react-addons-perf": "^15.4.1",
+    "react-addons-perf": "^15.4.2",
     "react-transform-hmr": "^1.0.4",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0",
-    "webpack-hot-middleware": "^2.14.0"
+    "webpack-hot-middleware": "^2.15.0"
   }
 }
