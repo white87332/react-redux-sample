@@ -2,9 +2,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import { browserHistory, match } from 'react-router';
 import { Provider } from 'react-redux';
+import { I18nextProvider } from 'react-i18next';
 import configureStore from '../store/configureStore.js';
 import { syncHistoryWithStore } from 'react-router-redux';
 import createRoutes from '../routes/routes';
+import i18n from '../i18n/i18n';
 
 if (process.env.NODE_ENV !== 'production')
 {
@@ -22,7 +24,9 @@ const routes = createRoutes(history, store, store.dispatch);
 
 render(
 	<Provider store={store}>
-		{routes}
+        <I18nextProvider i18n={i18n}>
+            {routes}
+        </I18nextProvider>
 	</Provider>,
 	document.getElementById('root')
 );

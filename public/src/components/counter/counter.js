@@ -1,6 +1,8 @@
+import './counter.scss';
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { translate } from 'react-i18next';
 import * as CounterActions from '../../actions/counter.js';
 
 function mapStateToProps(state)
@@ -15,6 +17,7 @@ function mapDispatchToProps(dispatch)
     return bindActionCreators(CounterActions, dispatch);
 }
 
+@translate(['common'], { wait: true })
 class Counter extends Component
 {
     constructor(props, context)
@@ -25,11 +28,7 @@ class Counter extends Component
 
     render()
     {
-        const
-        {
-            increment, incrementIfOdd, incrementAsync, decrement, numbers
-        } = this.props;
-
+        const { increment, incrementIfOdd, incrementAsync, decrement, numbers } = this.props;
         return (
             <div className="counter">
               Clicked: {numbers} times

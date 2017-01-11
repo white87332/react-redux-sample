@@ -1,0 +1,41 @@
+div.calendar
+{
+    > div.btns
+    {
+        display: flex;
+        align-items: center;
+
+         > div
+         {
+             margin-left: 4%;
+
+             &:first-child
+             {
+                 margin-left: 0;
+             }
+         }
+    }
+
+    > div.day,
+    > div.total
+    {
+        display: flex;
+        > div
+        {
+            width: 14.28%;
+            text-align: center;
+        }
+    }
+
+    > div.day
+    {
+
+    }
+
+    > div.total
+    {
+        flex-wrap: wrap;
+
+
+    }
+}

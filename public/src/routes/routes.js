@@ -40,6 +40,7 @@ export default function createRoutes(history, store, dispatch)
     			<Route path= "/donut" getComponent={loadConmponentAsync(require('bundle?lazy&name=donut!../components/donut/donut'))} />
 				<Route path= "/slider" getComponent={loadConmponentAsync(require('bundle?lazy&name=donut!../components/slider/slider'))} />
 				<Route path= "/areaChart" getComponent={loadConmponentAsync(require('bundle?lazy&name=areaChart!../components/areaChart/areaChart'))} />
+				<Route path= "/calendar" getComponent={loadConmponentAsync(require('bundle?lazy&name=calendar!../components/calendar/calendar'))} />
     		</Route>
         </Router>
     );
