@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
+import i18n from '../../i18n/i18n';
 import * as CounterActions from '../../actions/counter.js';
 
 function mapStateToProps(state)
@@ -24,6 +25,11 @@ class Counter extends Component
     {
         super(props, context);
         this.state = {};
+    }
+
+    componentDidMount()
+    {
+        i18n.changeLanguage('en');
     }
 
     render()
