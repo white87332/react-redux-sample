@@ -8,4 +8,4 @@ gulp.task('imageMin', function()
         .pipe(gulp.dest('./public/asset/img/min/'));
 });
 
-gulp.task('default', ['spriteSvg']);
+gulp.task('default', ['imageMin']);
