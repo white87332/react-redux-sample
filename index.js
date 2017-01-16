@@ -11,19 +11,23 @@ var port = 3000;
 var compiler = webpack(config);
 
 app.use(express.static(path.resolve('public')));
-app.use(webpackDevMiddleware(compiler,
-{
-    noInfo: true,
-    publicPath: config.output.publicPath
-}));
-app.use(webpackHotMiddleware(compiler));
 
-app.get('*', function(req, res)
+if (process.env.NODE_ENV !== 'production')
+{
+    app.use(webpackDevMiddleware(compiler,
+    {
+        noInfo: true,
+        publicPath: config.output.publicPath
+    }));
+    app.use(webpackHotMiddleware(compiler));
+}
+
+app.get('*', (req, res) =>
 {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
-app.listen(port, function(error)
+app.listen(port, (error) =>
 {
     if (error)
     {

@@ -17,19 +17,9 @@ module.exports = {
         filename: '/asset/js/bundle/bundle.min.js',
         chunkFilename: "/asset/js/bundle/chunk.[name].min.js"
     },
-    // devtool: "source-map",
-    // resolve:
-    // {
-    //     alias:
-    //     {
-    //         jqueryLazyload: './public/asset/js/jquery/jquery.lazyload.min.js',
-    //         i18Next: './public/asset/js/i18Next/i18Next.min.js'
-    //     },
-    //     "extensions": ["", ".js", ".jsx"]
-    // },
     module:
     {
-        loaders: [
+        rules: [
         {
             test: /\.js?$/,
             loader: 'babel',
@@ -37,30 +27,38 @@ module.exports = {
             exclude: /node_modules/
         },
         {
-            test: /\.json$/,
-            loader: "json-loader"
-        },
-        {
             test: /\.css|\.scss$/,
             loader: ExtractTextPlugin.extract(
-                "style-loader",
-                "css-loader!sass-loader?outputStyle=compressed!postcss-loader"
+                {
+                    fallbackLoader: 'style',
+                    loader: [
+                        { loader: 'css'},
+                        'sass',
+                        'postcss'
+                    ]
+                }
             )
         },
         {
             test: /\.(jpe?g|png|gif|svg)$/i,
-            loader: 'url-loader?limit=8192&name=./asset/img/[name].[ext]'
+            use: 'url-loader?limit=8192&name=./asset/img/[name].[ext]'
         }]
     },
-    postcss: [
-        autoprefixer
-    ],
+    resolveLoader: {
+        moduleExtensions: ["-loader"]
+    },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }}),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.DedupePlugin(),
-        // new webpack.optimize.CommonsChunkPlugin('/asset/js/bundle/common.js'),
         new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
-        new ExtractTextPlugin('./asset/css/bundle/bundle.min.css', { allChunks: true })
+        new webpack.LoaderOptionsPlugin({
+            minimize: true,
+            debug: false,
+            options: {
+                postcss: [ autoprefixer ]
+            }
+        }),
+        new ExtractTextPlugin({
+            filename:'./asset/css/bundle/bundle.min.css',
+            allChunks: false
+        })
     ]
 };
