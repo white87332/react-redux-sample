@@ -18,7 +18,8 @@
   "keywords": [
     "react",
     "redux",
-    "webpack2"
+    "webpack2",
+    "i18next"
   ],
   "homepage": "",
   "dependencies": {
