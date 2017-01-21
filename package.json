@@ -24,7 +24,7 @@
   "homepage": "",
   "dependencies": {
     "classnames": "^2.2.5",
-    "d3": "^4.4.2",
+    "d3": "^4.4.3",
     "deep-equal": "^1.0.1",
     "i18next": "^4.2.0",
     "i18next-browser-languagedetector": "^1.0.1",
