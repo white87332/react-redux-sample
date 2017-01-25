@@ -1,10 +1,10 @@
-import './counter.scss';
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import i18n from '../../i18n/i18n';
-import * as CounterActions from '../../actions/counter.js';
+import * as CounterActions from '../../actions/counter';
+import './counter.scss';
 
 function mapStateToProps(state)
 {
@@ -19,7 +19,7 @@ function mapDispatchToProps(dispatch)
 }
 
 @translate(['common'], { wait: true })
-class Counter extends Component
+class Counter extends React.Component
 {
     constructor(props, context)
     {
@@ -37,26 +37,26 @@ class Counter extends Component
         const { increment, incrementIfOdd, incrementAsync, decrement, numbers } = this.props;
         return (
             <div className="counter">
-              Clicked: {numbers} times
-              {' '}
-              <button onClick={increment}>+</button>
-              {' '}
-              <button onClick={decrement}>-</button>
-              {' '}
-              <button onClick={incrementIfOdd}>Increment if odd</button>
-              {' '}
-              <button onClick={() => incrementAsync()}>Increment async</button>
+                Clicked: {numbers} times
+                {' '}
+                <button onClick={increment}>+</button>
+                {' '}
+                <button onClick={decrement}>-</button>
+                {' '}
+                <button onClick={incrementIfOdd}>Increment if odd</button>
+                {' '}
+                <button onClick={() => incrementAsync()}>Increment async</button>
             </div>
         );
     }
 }
 
 Counter.propTypes = {
-    increment      : PropTypes.func.isRequired,
-    incrementIfOdd : PropTypes.func.isRequired,
-    incrementAsync : PropTypes.func.isRequired,
-    decrement      : PropTypes.func.isRequired,
-    numbers        : PropTypes.number.isRequired
+    increment: React.PropTypes.func.isRequired,
+    incrementIfOdd: React.PropTypes.func.isRequired,
+    incrementAsync: React.PropTypes.func.isRequired,
+    decrement: React.PropTypes.func.isRequired,
+    numbers: React.PropTypes.number.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

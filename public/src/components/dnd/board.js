@@ -19,13 +19,11 @@ class Board extends Component
         const y = Math.floor(i / 8);
 
         return (
-          <div key={i}
-               style={{ width: '12.5%', height: '12.5%' }}>
-                <BoardSquare x={x}
-                             y={y}>
-                  {this.renderPiece(x, y)}
+            <div key={i} style={{ width: '12.5%', height: '12.5%' }}>
+                <BoardSquare x={x} y={y}>
+                    {this.renderPiece(x, y)}
                 </BoardSquare>
-          </div>
+            </div>
         );
     }
 
@@ -41,17 +39,21 @@ class Board extends Component
     render()
     {
         const squares = [];
-        for (let i = 0; i < 64; i++)
+        for (let i = 0; i < 64; i += 1)
         {
             squares.push(this.renderSquare(i));
         }
 
         return (
-          <div className='Board'>
-            {squares}
-          </div>
+            <div className="Board">
+                {squares}
+            </div>
         );
     }
 }
+
+Board.propTypes = {
+    knightPosition: React.PropTypes.array.isRequired
+};
 
 export default Board;

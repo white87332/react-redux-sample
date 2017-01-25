@@ -1,15 +1,17 @@
-import './calendar.scss';
 import React from 'react';
 import update from 'react-addons-update';
 import { connect } from 'react-redux';
 import equal from 'deep-equal';
+import './calendar.scss';
 
-function mapStateToProps(state)
+// has params state
+function mapStateToProps()
 {
     return {};
 }
 
-function mapDispatchToProps(dispatch)
+// has params dispatch
+function mapDispatchToProps()
 {
     return {};
 }
@@ -19,7 +21,14 @@ class Calendar extends React.Component
     constructor(props, context)
     {
         super(props, context);
-        let d = new Date();
+
+        this.preYear = this.preYear.bind(this);
+        this.nextYear = this.nextYear.bind(this);
+        this.preMonth = this.preMonth.bind(this);
+        this.nextMonth = this.nextMonth.bind(this);
+        this.today = this.today.bind(this);
+
+        const d = new Date();
         this.state = {
             year: d.getFullYear(),
             month: d.getMonth() + 1
@@ -28,7 +37,7 @@ class Calendar extends React.Component
 
     shouldComponentUpdate(nextProps, nextState)
     {
-        if(equal(this.state, nextState))
+        if (equal(this.state, nextState))
         {
             return false;
         }
@@ -88,7 +97,7 @@ class Calendar extends React.Component
 
     preYear()
     {
-        let { year } = this.state;
+        const { year } = this.state;
         this.setState(update(this.state, {
             year: { $set: year - 1 }
         }));
@@ -96,7 +105,7 @@ class Calendar extends React.Component
 
     nextYear()
     {
-        let { year } = this.state;
+        const { year } = this.state;
         this.setState(update(this.state, {
             year: { $set: year + 1 }
         }));
@@ -105,10 +114,10 @@ class Calendar extends React.Component
     preMonth()
     {
         let { year, month } = this.state;
-        month = month - 1;
-        if (0 === month)
+        month -= 1;
+        if (month === 0)
         {
-            year = year - 1;
+            year -= 1;
             month = 12;
         }
         this.setState(update(this.state, {
@@ -120,10 +129,10 @@ class Calendar extends React.Component
     nextMonth()
     {
         let { year, month } = this.state;
-        month = month + 1;
-        if (13 == month)
+        month += 1;
+        if (month === 13)
         {
-            year = year + 1;
+            year += 1;
             month = 1;
         }
         this.setState(update(this.state, {
@@ -142,17 +151,17 @@ class Calendar extends React.Component
 
     renderTr()
     {
-        let { year, month } = this.state;
-        let dayFormat = new Date(year, month, 0).toString().split(' ');
-        let whatDay = dayFormat[0];
-        let totalDays = parseInt(dayFormat[2]);
+        const { year, month } = this.state;
+        const dayFormat = new Date(year, month, 0).toString().split(' ');
+        const whatDay = dayFormat[0];
+        const totalDays = parseInt(dayFormat[2], 10);
 
-        for (let i = 1; i <= totalDays; i++)
+        for (let i = 1; i <= totalDays; i += 1)
         {
-            if (1 == i % 7 || 1 == i)
-            {
-
-            }
+            // if (1 == i % 7 || 1 == i)
+            // {
+            //
+            // }
 
             switch (whatDay)
             {
@@ -177,21 +186,19 @@ class Calendar extends React.Component
                 default:
             }
         }
-
-
     }
 
     render()
     {
-        let { year, month } = this.state;
+        const { year, month } = this.state;
         return (
             <div className="calendar">
                 <div className="btns">
-                    <div><input type='button' value='去年' onClick={::this.preYear} />{year}年</div>
-                    <div><input type='button' value='明年' onClick={::this.nextYear} /></div>
-                    <div><input type='button' value='上月' onClick={::this.preMonth} />&nbsp; {month}月&nbsp;</div>
-                    <div><input type='button' value='下月' onClick={::this.nextMonth} /></div>
-                    <div><input type='button' value='今天' onClick={::this.today} /></div>
+                    <div><input type="button" value="去年" onClick={() => this.preYear()} />{year}年</div>
+                    <div><input type="button" value="明年" onClick={() => this.nextYear()} /></div>
+                    <div><input type="button" value="上月" onClick={() => this.preMonth()} />&nbsp; {month}月&nbsp;</div>
+                    <div><input type="button" value="下月" onClick={() => this.nextMonth()} /></div>
+                    <div><input type="button" value="今天" onClick={() => this.today()} /></div>
                 </div>
 
                 <div className="day">
