@@ -6,10 +6,7 @@
     },
     "extends": "airbnb",
     "globals": {
-        "log": true,
-        "reactCookie": true,
-        "braintree": true,
-        "videojs": true
+        "log": true
     },
     "parser": "babel-eslint",
     "parserOptions": {
