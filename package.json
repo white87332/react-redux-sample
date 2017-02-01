@@ -24,9 +24,9 @@
   "homepage": "",
   "dependencies": {
     "classnames": "^2.2.5",
-    "d3": "^4.4.4",
+    "d3": "^4.5.0",
     "deep-equal": "^1.0.1",
-    "i18next": "^6.0.3",
+    "i18next": "^6.1.1",
     "i18next-browser-languagedetector": "^1.0.1",
     "i18next-xhr-backend": "^1.3.0",
     "lodash": "^4.17.4",
@@ -49,7 +49,7 @@
     "superagent": "^3.4.1"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.0",
+    "autoprefixer": "^6.7.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
@@ -72,15 +72,15 @@
     "gulp": "^3.9.1",
     "gulp-imagemin": "^3.1.1",
     "node-libs-browser": "^2.0.0",
-    "node-sass": "^4.4.0",
+    "node-sass": "^4.5.0",
     "postcss-loader": "^1.2.2",
     "react-addons-perf": "^15.4.2",
     "react-transform-hmr": "^1.0.4",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^2.2.0",
+    "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.9.0",
-    "webpack-hot-middleware": "^2.15.0"
+    "webpack-hot-middleware": "^2.16.1"
   }
 }
