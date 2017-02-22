@@ -1,7 +1,7 @@
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/counter';
 
 const initialState = {
-    'numbers': 0
+    numbers: 0
 };
 
 export default function counter(state = initialState, action = {})
@@ -10,11 +10,11 @@ export default function counter(state = initialState, action = {})
     {
         case INCREMENT_COUNTER:
             return Object.assign({}, state, {
-                'numbers': state.numbers + 1
+                numbers: state.numbers + 1
             });
         case DECREMENT_COUNTER:
             return Object.assign({}, state, {
-                'numbers': state.numbers - 1
+                numbers: state.numbers - 1
             });
         default:
             return state;

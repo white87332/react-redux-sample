@@ -1,7 +1,7 @@
 import * as types from '../constants/actionTypes';
 
 const initialItems = {
-    'list':[]
+    list: []
 };
 
 export default function posts(state = initialItems, action = {})
@@ -10,7 +10,7 @@ export default function posts(state = initialItems, action = {})
     {
         case types.GET_LATEST_LIST:
             return Object.assign({}, state, {
-                'list': action.data
+                list: action.data
             });
         default:
             return state;
