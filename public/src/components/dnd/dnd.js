@@ -1,9 +1,9 @@
-import './dnd.scss';
 import React, { Component } from 'react';
 import Board from './board';
 import { observe } from './game';
+import './dnd.scss';
 
-class Index extends Component
+class Dnd extends Component
 {
     constructor(props)
     {
@@ -46,4 +46,4 @@ class Index extends Component
     }
 }
 
-export default Index;
+export default Dnd;
