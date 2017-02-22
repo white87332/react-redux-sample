@@ -6,7 +6,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.development.config');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 const compiler = webpack(config);
 
@@ -22,7 +22,7 @@ if (process.env.NODE_ENV !== 'production')
     app.use(webpackHotMiddleware(compiler));
 }
 
-app.use(require('prerender-node'));
+app.use(require('prerender-node').set('prerenderServiceUrl', 'http://localhost:3000/'));
 
 app.get('*', (req, res) =>
 {
