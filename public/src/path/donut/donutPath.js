@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import * as d3 from 'd3';
 
-class DonutPath extends Component
+class DonutPath extends React.Component
 {
     constructor(props, context)
     {

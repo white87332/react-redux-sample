@@ -1,8 +1,7 @@
-import React, { Component, PropTypes} from 'react';
+import React from 'react';
 import { bindActionCreators } from 'redux';
-import * as postsActions from '../../actions/postsActions';
 import { connect } from 'react-redux';
-
+import * as postsActions from '../../actions/postsActions';
 
 function mapStateToProps(state)
 {
@@ -18,7 +17,7 @@ function mapDispatchToProps(dispatch)
     };
 }
 
-class Posts extends Component
+class Posts extends React.Component
 {
     constructor(props)
     {

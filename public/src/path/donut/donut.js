@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import * as d3 from 'd3';
+import React from 'react';
 import DonutSvg from './donutSvg';
 import DonutDataSeries from './donutDataSeries';
 
-class Donut extends Component
+class Donut extends React.Component
 {
     constructor(props, context)
     {

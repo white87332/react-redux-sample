@@ -1,7 +1,7 @@
+import React from 'react';
 import './drag.scss';
-import React, { Component, PropTypes } from 'react';
 
-class Drag extends Component
+class Drag extends React.Component
 {
     constructor(props, context)
     {

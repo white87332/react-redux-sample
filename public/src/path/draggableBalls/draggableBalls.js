@@ -1,7 +1,7 @@
-import './draggableBalls.scss';
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { Motion, spring } from 'react-motion';
 import { range } from 'lodash';
+import './draggableBalls.scss';
 
 const springSetting1 = {
     stiffness: 180,
@@ -40,7 +40,7 @@ function clamp(n, min, max)
     return Math.max(Math.min(n, max), min);
 }
 
-class DraggableBalls extends Component
+class DraggableBalls extends React.Component
 {
     constructor(props, context)
     {

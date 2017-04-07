@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { TransitionMotion, spring } from 'react-motion';
 
-class TransMotion extends Component
+class TransMotion extends React.Component
 {
     constructor()
     {

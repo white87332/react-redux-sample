@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
+import PropTypes from 'prop-types';
 import i18n from '../../i18n/i18n';
 import * as CounterActions from '../../actions/counter';
 import './counter.scss';
@@ -52,11 +53,11 @@ class Counter extends React.Component
 }
 
 Counter.propTypes = {
-    increment: React.PropTypes.func.isRequired,
-    incrementIfOdd: React.PropTypes.func.isRequired,
-    incrementAsync: React.PropTypes.func.isRequired,
-    decrement: React.PropTypes.func.isRequired,
-    numbers: React.PropTypes.number.isRequired
+    increment: PropTypes.func.isRequired,
+    incrementIfOdd: PropTypes.func.isRequired,
+    incrementAsync: PropTypes.func.isRequired,
+    decrement: PropTypes.func.isRequired,
+    numbers: PropTypes.number.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

@@ -1,11 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { SelectArea, createSelectable } from '../selectArea/selectArea';
 import Drag from '../drag/drag';
 
 let SelectAreaItem = createSelectable(Drag);
 
-class SelectItems extends Component
+class SelectItems extends React.Component
 {
     constructor(props, context)
     {

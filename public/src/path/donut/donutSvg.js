@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class DonutSvg extends Component
+class DonutSvg extends React.Component
 {
     constructor(props, context)
     {

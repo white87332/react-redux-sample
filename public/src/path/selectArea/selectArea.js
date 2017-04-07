@@ -1,12 +1,13 @@
 
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { findDOMNode } from 'react-dom';
-import { addEventListener, removeEventListener } from '../../utils/event';
 import { forIn } from 'lodash';
-import Drag from '../drag/drag';
+import PropTypes from 'prop-types';
+import { addEventListener, removeEventListener } from '../../utils/event';
+// import Drag from '../drag/drag';
 import createSelectable from './createSelectable';
 
-class SelectArea extends Component
+class SelectArea extends React.Component
 {
     constructor(props, context)
     {

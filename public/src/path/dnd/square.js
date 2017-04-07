@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 
-class Square extends Component
+class Square extends React.Component
 {
     render()
     {
