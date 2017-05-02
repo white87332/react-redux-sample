@@ -30,7 +30,7 @@
     "i18next": "^7.2.3",
     "i18next-browser-languagedetector": "^1.0.1",
     "i18next-xhr-backend": "^1.4.1",
-    "immutability-helper": "^2.1.2",
+    "immutability-helper": "^2.2.0",
     "lodash": "^4.17.4",
     "normalize.css": "^6.0.0",
     "prerender-node": "^2.7.1",
